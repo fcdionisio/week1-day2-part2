@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import DisplayGrocery from './DisplayGrocery';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state =  [
+    {
+      prod_id: 1,
+      productName: "Tootpaste",
+      productPrice: 169.55
+    },
+    {
+      prod_id: 2,
+      productName: "Soap",
+      productPrice: 88.75
+    },
+    {
+      prod_id: 3,
+      productName: "Dog Food",
+      productPrice: 129.15
+    }
+  ]
+
+  render() {
+    return (
+      <div>
+        <DisplayGrocery grocery={this.state} />
+      </div>
+    );
+  }
 }
 
 export default App;
